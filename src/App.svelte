@@ -12,7 +12,8 @@
     <h1>Захід до Дня захисту дітей</h1>
 
     <p>
-      Чекаємо на вас <strong>1 червня о 15:00</strong> у Посольстві України в Сербії за адресою <a href={embOnMap}>вул.Пає Адамова 4 у Белграді</a>.
+      Чекаємо на вас <strong>1 червня </strong> у Посольстві України в Сербії за адресою <a href={embOnMap}>вул.Пає Адамова 4 у Белграді</a>.
+      Точний час зустрічі та програму ви отримаєте після реєстрації.
     </p>
 
     <hr>
@@ -21,7 +22,19 @@
 
     <ul class="conditions">
       <li>Попередньо зареєструватися <a href="https://docs.google.com/forms/d/1MoMlMx__uhagZmzeF9nsHnrw5w9i2CmmjUMkiOmZyyw/viewform?edit_requested=true">в Google формі</a></li>
-      <li>Принести з собою малюнок дитини, де зображений мир</li>
+      <li>
+        Вхідний квиток: малюнок на одну з тем:
+        <ul>
+          <li>моє улюблене місто</li> 
+          <li>мої улюблені квіти</li>
+          <li>я займаюсь спортом</li>
+          <li>отака вона моя Україна</li>
+          <li>ось так я бачу Сербію</li>
+          <li>улюблена розвага</li>
+          <li>миру- мир</li>
+          <li>тощо</li>
+        </ul>
+      </li>
     </ul>
 
   </main>
@@ -132,14 +145,15 @@
     border-radius: 1rem;
     max-width: 25em;
   }
-  .conditions li::before {
+  .conditions > li::before {
     content: '☑';
     width: 5px;
     height: 10px;
     object-fit: contain;
     margin-inline-end: 1ch;
   }
-  .conditions li + li {
-    /* margin-top: 1ch; */
+  .conditions ul {
+    list-style-type: disc;
+    margin-inline-start: 1ch;
   }
 </style>
