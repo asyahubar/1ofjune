@@ -1,7 +1,9 @@
 <script>
   import mainImg from './assets/ukraine.jpeg'
+  import Footer from './lib/Footer.svelte'
   let lang = 'uk'
   let embOnMap = 'https://www.google.com/maps/place/Embassy+of+Ukraine/@44.7727203,20.4594424,17z/data=!3m1!4b1!4m5!3m4!1s0x475a704efbff6dd5:0xbb490a4f707cb2db!8m2!3d44.7727165!4d20.4616311'
+  let regForm = 'https://docs.google.com/forms/d/1MoMlMx__uhagZmzeF9nsHnrw5w9i2CmmjUMkiOmZyyw/viewform?edit_requested=true'
 </script>
 
 <section class="layout">
@@ -17,13 +19,13 @@
     </p>
 
     <hr>
-
+    <br>
     <p>Щоб доєднатися, потрібно:</p>
 
     <ul class="conditions">
-      <li>Попередньо зареєструватися <a href="https://docs.google.com/forms/d/1MoMlMx__uhagZmzeF9nsHnrw5w9i2CmmjUMkiOmZyyw/viewform?edit_requested=true">в Google формі</a></li>
+      <li>Попередньо зареєструватися <a href={regForm}>в Google формі</a></li>
       <li>
-        Вхідний квиток: малюнок на одну з тем:
+        Вхідний квиток, себто малюнок на одну з тем:
         <ul>
           <li>моє улюблене місто</li> 
           <li>мої улюблені квіти</li>
@@ -36,9 +38,11 @@
         </ul>
       </li>
     </ul>
-
+  
+    <Footer />
   </main>
 </section>
+
 
 <style>
   @font-face {
@@ -73,6 +77,7 @@
   main {
     /* text-align: center; */
     padding: 1em;
+    max-width: 65em;
     /* margin: 0 auto; */
   }
 
@@ -155,5 +160,10 @@
   .conditions ul {
     list-style-type: disc;
     margin-inline-start: 1ch;
+    margin-block-start: .4rem;
+    font-size: 1.25rem;
+  }
+  .conditions ul li {
+    padding: .4rem 0;
   }
 </style>

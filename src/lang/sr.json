@@ -1,0 +1,20 @@
+{
+    "title": "Захід до Дня захисту дітей",
+    "subtitle": "За підтримки Посольства України в Сербії та громади",
+    "mainMessage": "Čekamo vas <strong>1. juna. </strong> u Ambasadi Srbije <a href={embOnMap}>u Beogradu</a>. Dobićete tačno vreme i program događaja posle registracije.",
+    "join": "Da biste pridružili, vama treba",
+    "conditions": {
+        "register": "Da registrujete se unapred <a href={regForm}>na Google formi</a>",
+        "drawAPic": {
+            "title": "Imate \"ulaznu kartu\", znaći jedan od crteža:",
+            "themes": [
+                "moj omiljen grad",
+                "moje omiljeno cveće",
+                "vežbam sport",
+                "ovaka je Ukrajina",
+                "ovaka je Srbija",
+                "omiljena zabava",
+                "miru - mir i t.d."
+            ]
+    }
+}
