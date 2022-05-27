@@ -1,43 +1,63 @@
 <script>
   import mainImg from './assets/ukraine.jpeg'
+  import qr from './assets/form_qr.svg'
+  import natureImg from './assets/nature.svg'
   import Footer from './lib/Footer.svelte'
+  import TailwindCss from './lib/TailwindCSS.svelte';
+
   let lang = 'uk'
   let embOnMap = 'https://www.google.com/maps/place/Embassy+of+Ukraine/@44.7727203,20.4594424,17z/data=!3m1!4b1!4m5!3m4!1s0x475a704efbff6dd5:0xbb490a4f707cb2db!8m2!3d44.7727165!4d20.4616311'
   let regForm = 'https://docs.google.com/forms/d/1MoMlMx__uhagZmzeF9nsHnrw5w9i2CmmjUMkiOmZyyw/viewform?edit_requested=true'
 </script>
+<TailwindCss />
 
 <section class="layout">
-  <img src={mainImg} alt="Долоні обіймають сердечко. Авторка: Agnieszka Srokosz" class="main-img"/>
+  <div class="main-img">
+    <img src={mainImg} alt="Долоні обіймають сердечко. Авторка: Agnieszka Srokosz"/>
+  </div>
   <main>
     <p class="subtitle">За підтримки Посольства України в Сербії та громади</p>
 
     <h1>Захід до Дня захисту дітей</h1>
 
-    <p>
+    <div class="announcement text-red-500 p-8 border-dashed border-red-500 border rounded font-medium">Дякуємо усім за ваш інтерес. Реєстрація завершена.</div>
+
+    <!-- <p>
       Чекаємо на вас <strong>1 червня </strong> у Посольстві України в Сербії за адресою <a href={embOnMap}>вул.Пає Адамова 4 у Белграді</a>.
       Точний час зустрічі та програму ви отримаєте після реєстрації.
-    </p>
+    </p> -->
 
     <hr>
-    <br>
-    <p>Щоб доєднатися, потрібно:</p>
+    <!-- <h2>Щоб доєднатися, потрібно:</h2>
 
     <ul class="conditions">
-      <li>Попередньо зареєструватися <a href={regForm}>в Google формі</a></li>
       <li>
-        Вхідний квиток, себто малюнок на одну з тем:
-        <ul>
-          <li>моє улюблене місто</li> 
-          <li>мої улюблені квіти</li>
-          <li>я займаюсь спортом</li>
-          <li>отака вона моя Україна</li>
-          <li>ось так я бачу Сербію</li>
-          <li>улюблена розвага</li>
-          <li>миру- мир</li>
-          <li>тощо</li>
-        </ul>
+        <figure>
+          <img src={qr} alt="QR code" class="w-72 p-4">
+          <figcaption>Попередньо зареєструватися <a href={regForm}>в Google формі</a></figcaption>
+        </figure>
       </li>
-    </ul>
+      <li>
+        <div class="slider">
+          <div class="slide">
+            <img src={natureImg} alt="Nature illustration" class="w-72 p-4">
+          </div>
+          <div class="slide">
+            <ul>
+              <li>моє улюблене місто</li> 
+              <li>мої улюблені квіти</li>
+              <li>я займаюсь спортом</li>
+              <li>отака вона моя Україна</li>
+              <li>ось так я бачу Сербію</li>
+              <li>улюблена розвага</li>
+              <li>миру- мир</li>
+              <li>тощо</li>
+            </ul>
+          </div>
+        </div>
+        <p>Вхідний квиток, себто малюнок на одну з тем</p>
+      </li>
+    </ul> -->
   
     <Footer />
   </main>
@@ -84,6 +104,11 @@
   .main-img {
     height: 16rem;
     width: 100%;
+  }
+  .main-img img {
+    position: static;
+    height: 16rem;
+    width: 100%;
     object-fit: cover;
   }
 
@@ -94,7 +119,13 @@
 
     .main-img {
       height: 100vh;
-      width: 32%;
+      min-width: 32vw;
+      width: auto;
+    }
+    .main-img img {
+      position: fixed;
+      height: 100vh;
+      width: 32vw;
     }
   }
 
@@ -124,6 +155,9 @@
   a {
     color: #0057b8;
   }
+  a:hover {
+    text-decoration: underline;
+  }
 
   hr {
     border-bottom: 1px dashed #0057b8;
@@ -133,33 +167,30 @@
     margin: 1rem 0;
   }
 
-  @counter-style emoji {
-    system: cyclic;
-    symbols: "\1F431" "\1F436" "\1F984";
-    suffix: " ";
-  }
   .conditions {
+    display: flex;
+    gap: 3ch;
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
-  .conditions li {
+  .conditions > li {
     margin: 0;
-    padding: .7rem 0;
-    /* background-color: rgba(255, 216, 1, 0.4); */
+    padding: 1rem;
+    border: 1px solid grey;
     border-radius: 1rem;
-    max-width: 25em;
+    max-width: 25rem;
   }
-  .conditions > li::before {
+  /* .conditions > li::before {
     content: '☑';
     width: 5px;
     height: 10px;
     object-fit: contain;
     margin-inline-end: 1ch;
-  }
+  } */
   .conditions ul {
     list-style-type: disc;
-    margin-inline-start: 1ch;
+    margin-inline-start: 5ch;
     margin-block-start: .4rem;
     font-size: 1.25rem;
   }
