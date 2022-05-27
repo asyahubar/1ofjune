@@ -20,7 +20,7 @@
 
     <h1>Захід до Дня захисту дітей</h1>
 
-    <div class="announcement text-red-500 p-8 border-dashed border-red-500 border rounded font-medium">Дякуємо усім за ваш інтерес. Реєстрація завершена.</div>
+    <div class="announcement text-red-500 p-8 border-dashed border-red-500 border rounded font-medium">Дякуємо усім за ваш інтерес. Реєстрація завершена. Всі зареєстровані отримають запрошення на імейл.</div>
 
     <!-- <p>
       Чекаємо на вас <strong>1 червня </strong> у Посольстві України в Сербії за адресою <a href={embOnMap}>вул.Пає Адамова 4 у Белграді</a>.
