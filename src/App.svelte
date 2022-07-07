@@ -8,63 +8,28 @@
   let lang = 'uk'
   let embOnMap = 'https://www.google.com/maps/place/Embassy+of+Ukraine/@44.7727203,20.4594424,17z/data=!3m1!4b1!4m5!3m4!1s0x475a704efbff6dd5:0xbb490a4f707cb2db!8m2!3d44.7727165!4d20.4616311'
   let regForm = 'https://docs.google.com/forms/d/1MoMlMx__uhagZmzeF9nsHnrw5w9i2CmmjUMkiOmZyyw/viewform?edit_requested=true'
+  const variableFontGuide = 'https://glyphsapp.com/learn/creating-a-variable-font'
+  const notoSerifVariable = 'https://fonts.google.com/noto/specimen/Noto+Serif+Display?vfonly=true'
+  const variableFontCss = 'https://etceteratype.co/blog/animating-a-variable-font-with-css'
+
+  let wght = 100
 </script>
 <TailwindCss />
 
 <section class="layout">
   <div class="main-img">
-    <img src={mainImg} alt="Долоні обіймають сердечко. Авторка: Agnieszka Srokosz"/>
   </div>
   <main>
-    <p class="subtitle">За підтримки Посольства України в Сербії та громади</p>
-
-    <h1>Захід до Дня захисту дітей</h1>
-
-    <div class="announcement text-red-500 p-8 border-dashed border-red-500 border rounded font-medium">Дякуємо усім за ваш інтерес. Реєстрація завершена. Всі зареєстровані отримають запрошення на імейл.</div>
-
-    <!-- <p>
-      Чекаємо на вас <strong>1 червня </strong> у Посольстві України в Сербії за адресою <a href={embOnMap}>вул.Пає Адамова 4 у Белграді</a>.
-      Точний час зустрічі та програму ви отримаєте після реєстрації.
-    </p> -->
-
-    <hr>
-    <!-- <h2>Щоб доєднатися, потрібно:</h2>
-
-    <ul class="conditions">
-      <li>
-        <figure>
-          <img src={qr} alt="QR code" class="w-72 p-4">
-          <figcaption>Попередньо зареєструватися <a href={regForm}>в Google формі</a></figcaption>
-        </figure>
-      </li>
-      <li>
-        <div class="slider">
-          <div class="slide">
-            <img src={natureImg} alt="Nature illustration" class="w-72 p-4">
-          </div>
-          <div class="slide">
-            <ul>
-              <li>моє улюблене місто</li> 
-              <li>мої улюблені квіти</li>
-              <li>я займаюсь спортом</li>
-              <li>отака вона моя Україна</li>
-              <li>ось так я бачу Сербію</li>
-              <li>улюблена розвага</li>
-              <li>миру- мир</li>
-              <li>тощо</li>
-            </ul>
-          </div>
-        </div>
-        <p>Вхідний квиток, себто малюнок на одну з тем</p>
-      </li>
-    </ul> -->
-  
+    <h2 style="--wght: {wght}">Here we go</h2>
+    <p>{wght}</p>
+    <input type="range" id="wght" name="wght" min="100" max="900" bind:value={wght}>
     <Footer />
   </main>
 </section>
 
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@100..900');
   @font-face {
     font-family: 'e-Ukraine';
     src: url('./assets/fonts/e-Ukraine-Thin.ttf') format('ttf');
@@ -80,6 +45,11 @@
     src: url('./assets/fonts/e-Ukraine-Bold.ttf') format('ttf');
     font-weight: 700;
   }
+  /* @font-face {
+    font-family: 'Noto Serif Display', serif;
+    src: url('./assets/fonts/NotoSerifDisplay-VariableFont_wdth,wght.ttf') format('ttf') tech('variations');
+    font-weight: 100 900;
+  } */
 
   :root {
     font-family: 'e-Ukraine', 'Segoe UI', Roboto, Oxygen,
@@ -129,11 +99,13 @@
     }
   }
 
-  h1 {
+  h2 {
     color: #0057b8;
     /* text-transform: uppercase; */
+    font-family: 'Noto Serif Display';
     font-size: 3.25rem;
-    font-weight: 700;
+    /* font-weight: 700; */
+    font-variation-settings: 'wght' var(--wght);
     line-height: 1.1;
     margin: 2rem 0;
     /* max-width: 14rem; */
