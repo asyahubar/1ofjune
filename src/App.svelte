@@ -20,9 +20,26 @@
   <div class="main-img">
   </div>
   <main>
-    <h2 style="--wght: {wght}">Here we go</h2>
+    <h2 style="--wght: {wght}">
+      Here we go
+    </h2>
     <p>{wght}</p>
     <input type="range" id="wght" name="wght" min="100" max="900" bind:value={wght}>
+    <!-- <h3>
+      <span style="--delay: 0.1s">H</span>
+      <span style="--delay: 0.2s">e</span>
+      <span style="--delay: 0.3s">r</span>
+      <span style="--delay: 0.4s">e</span> 
+      <span style="--delay: 0.5s">w</span>
+      <span style="--delay: 0.6s">e</span> 
+      <span style="--delay: 0.7s">g</span>
+      <span style="--delay: 0.8s">o</span>
+    </h3> -->
+    <h3>Loading
+      <span style="--delay: 0.1s">.</span>
+      <span style="--delay: 0.3s">.</span>
+      <span style="--delay: 0.5s">.</span>
+    </h3>
     <Footer />
   </main>
 </section>
@@ -69,6 +86,7 @@
     padding: 1em;
     max-width: 65em;
     /* margin: 0 auto; */
+    width: 100%;
   }
 
   .main-img {
@@ -109,6 +127,36 @@
     line-height: 1.1;
     margin: 2rem 0;
     /* max-width: 14rem; */
+  }
+
+  h3 {
+    display: block;
+    font-family: 'Noto Serif Display';
+    font-size: 4rem;
+    color: crimson;
+    line-height: 1.1;
+    margin: 2rem 0;
+  }
+
+  h3 span {
+    text-transform: capitalize;
+    animation: bolden ease 1.1s var(--delay) infinite;
+    width: 2em;
+  }
+
+  @keyframes bolden {
+    from {
+      font-variation-settings: 'wght' 900;
+    }
+    45% {
+      font-variation-settings: 'wght' 100;
+    }
+    55% {
+      font-variation-settings: 'wght' 100;
+    }
+    to {
+      font-variation-settings: 'wght' 900;
+    }
   }
 
   .subtitle {
